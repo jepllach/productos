@@ -18,6 +18,7 @@ use App\Http\Controllers\comentariosController;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
 Route::post('productos/agregar', [productosController::class,'agregar']);
 Route::get('productos/{id}', [productosController::class,'mostrar']);
 Route::put('productos/{id}', [productosController::class,'actualizar']);
