@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use App\Models\productos;
 class productosController extends Controller
 {
+    public static function listar(){
+        $productos = productos::all()->toArray();
+        return response()->json($productos, 200);
+    }
     public static function agregar(Request $request){
         $req = $request->all();
         $producto = new productos();
